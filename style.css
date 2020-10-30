@@ -1,0 +1,27 @@
+.filterable {
+    margin-top: 15px;
+}
+.filterable .panel-heading .pull-right {
+    margin-top: -20px;
+    align: right;
+}
+.filterable .panel-heading .panel-title {
+    background-color:yellow ;
+}
+.filterable .filters input[disabled] {
+    background-color: blue;
+    border: 3px;
+    cursor: auto;
+    box-shadow: none;
+    padding: 10px;
+    height: auto;
+}
+.filterable .filters input[disabled]::-webkit-input-placeholder {
+    color: #333;
+}
+.filterable .filters input[disabled]::-moz-placeholder {
+    color: #333;
+}
+.filterable .filters input[disabled]:-ms-input-placeholder {
+    color: #333;
+}

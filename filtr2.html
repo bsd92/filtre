@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> filtrage</title>
+	<link rel="stylesheet" type="text/css" href="style2.css">
+</head>
+<body>
+	<div class="container">
+		<table id="mytable" class="style2-all">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nom</th>
+					<th>Prenom</th>
+					<th>Age</th>
+					<th>Pays</th>
+					<th>Sexe</th>
+					<th>Date d_inscription</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<?php 
+				$servname = 'localhost';
+            $dbname = 'exampweb';
+            $user = 'root';
+            $pass = '';
+            
+            try{
+                $pdo = new PDO("mysql:host=$servname;dbname=$dbname", $user, $pass);
+                $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+              
+                $pdo->exec($sql);
+                
+            }
+            catch(PDOException $e){
+              echo "Erreur : " . $e->getMessage();
+				<?php 
+				$db=new PDO("mysql:host=localhost;dbname=exampweb","root",""));
+				$stmt=$db->prepare("select * from testes");
+				$stmt->execute();
+				while($row=$stmt->fetch()){
+			} 
+					}
+				?>
+				<tr>
+					<td><?php echo $row['id_text'] ?></td>
+					<td><?php echo $row['Nom'] ?></td>
+					<td><?php echo $row['Prenom'] ?></td>
+					<td><?php echo $row['Age'] ?></td>
+					<td><?php echo $row['Paye'] ?></td>
+					<td><?php echo $row['Sexe'] ?></td>
+					<td><?php echo $row['Date_inscrit'] ?></td>
+				</tr>
+				<?php
+			    }
+			    ?>
+			</tbody>
+		</table>
+	</div>	
+	<script src="jquery.min.js"></script>
+	<script src="ddtf.js"></script>
+	<script>
+		$('#mytable').ddTableFilter();
+	</script>
+</body>
